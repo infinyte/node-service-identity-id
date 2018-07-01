@@ -1,10 +1,12 @@
-# @pgaubatz/uuid [![travis][travis-image]][travis-url]
+# @infinyte/node-service-identity-id [![travis][travis-image]][travis-url]
 
-#### Create, parse and unparse RFC 4122 v4 UUIDs.
+#### Create, parse and unparse service identity id's using RFC 4122 v4 UUIDs.
 
-[![saucelabs][saucelabs-image]][saucelabs-url]
+### Summary
+A NodeJS helper which creates a UUID that is composed of a combination of details derived from a host's internal configuration details combined with a randomly generated value.  The resulting UUID can then be used as an identity token for service discovery and proxy/reverse-proxy traffic within a SOA or Microservice based system architecture.
 
-[travis-image]: https://img.shields.io/travis/pgaubatz/node-uuid/master.svg
-[travis-url]: https://travis-ci.org/pgaubatz/node-uuid
-[saucelabs-image]: https://saucelabs.com/browser-matrix/pgaubatz-node-uuid.svg
-[saucelabs-url]: https://saucelabs.com/u/pgaubatz-node-uuid
+##UUID Source Object Structure
+- Hostname : string
+- MAC Address : string
+- IP Address : [] string (?? Perhaps only the most recent IP, or the last X most recent )
+- RFC 4122 v4 UUID : string
